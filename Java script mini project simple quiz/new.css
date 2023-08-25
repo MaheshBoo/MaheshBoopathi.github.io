@@ -1,0 +1,40 @@
+body {
+	background-color: rgb(96, 110, 122);
+}
+.content {
+    margin-top: 594px;
+    }
+    .header {
+    padding: 110px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    }
+    .main-box{
+        border:1px solid #000000;
+    }
+    .box-title{
+        background-color:#a83939;
+        padding:10px;
+        color:#000000;
+        font-weight:600;
+    }
+    .question {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+    .options {
+        font-size: 28px;
+        display: box;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        position: fixed;
+        top: 30%;
+        left: 12%;
+    } 
+    #score {
+        font-size: 30px;
+        color: rgb(0, 0, 0);
+    }
+        
