@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    margin:0px;
+    padding:0px;
+    font-size:100%;
+    font-family:sans-serif;
+    background-color: rgb(177, 127, 67);
+}
+ 
+.wrapper{
+    max-width:768px;
+    width:100%;
+    margin:0px auto;
+    padding:0px 10px;
+}
+ 
+.wrapper .page-heading{
+    text-align:center;
+    margin-top:20px;
+}
+ 
+.task-form{
+    max-width:500px;
+    display:block;
+    border:1px solid;
+    border-radius:5px;
+    padding:10px;
+    margin: 0 auto;
+    background-color:darkgray;
+}
+ 
+.task-form .form-field{
+    width:100%;
+    margin-bottom:15px;
+}
+ 
+.form-field label{
+    width:100%;
+    clear:both;
+    display:block;
+    font-size:16px;
+}
+.form-field input[type=text], .form-field textarea{
+    width:100%;
+    clear:both;
+    display:block;
+    font-size:16px;
+    padding:5px;
+    border-radius:5px;
+    background-color:ghostwhite;
+}
+ 
+.form-field button{
+    max-width:100px;
+    display:block;
+    width:100%;
+    padding:10px;
+    background-color:#15af44e6;
+    color:#FFFFFF;
+    font-size:20px;
+    text-transform: uppercase;
+    text-transform: uppercase;
+    border: 1px solid;
+    border-radius: 5px;
+}
+ 
+.task-list-wrapper{
+    display:block;
+    margin-top:20px;
+}
+ 
+.task-list-items{
+    list-style:none;
+    margin:5px;
+    padding:0px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+ 
+.task-list-items li {
+    list-style: none;
+    display: block;
+    max-width: 222px;
+    margin-right: 12px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid;
+    border-radius: 5px;
+    max-height:200px;
+    overflow-y:auto;
+    background-color: aquamarine;
+}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="page-heading">My Task Board</h1>
+        <div class="task-form">
+            <form method="post" id="taskGenerate">
+                <div class="form-field">
+                    <label for="taskName">Task Name</label>
+                    <input type="text" name="taskName" id="taskName" required="true">
+                </div>
+                <div class="form-field">
+                    <label for="taskName">dueDate</label>
+                    <input type="text" name="dueDate" id="dueDate" required="true">
+                </div>
+                <div class="form-field">
+                    <label for="Priority">Priority</label>
+                    <textarea name="Priority" id="Priority" required="true"></textarea>
+                </div>
+                <div class="form-field">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="task-list-wrapper">
+            <ul id="taskList"class="task-list-items">
+            </ul>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+    renderListData(); 
+});
+document.addEventListener('click',function(e){
+    if(e.target && e.target.className == 'removeTask'){
+        let removeTaskBtn = e.target 
+        if(removeTaskBtn){
+            event.preventDefault();
+            let removeIndex = event.target.getAttribute('data-key');
+            let tasksList = JSON.parse(localStorage.getItem('tasks_mgmt'));
+            let removeTaskList = tasksList.splice(removeIndex,1);
+            localStorage.setItem('tasks_mgmt', JSON.stringify(tasksList));
+            renderListData();
+        }
+    }
+ })
+document.querySelector('form#taskGenerate').addEventListener('submit', function(event){
+    event.preventDefault();
+    let taskName = document.querySelector('#taskName');
+    let dueDate = document.querySelector('#dueDate');
+    let Priority = document.querySelector('#Priority');
+    let taskStatus = document.querySelector('#Priority');
+    letNewTask = { 'taskName' : taskName.value, 'dueDate' : dueDate.value, 'Priority' : Priority.value };
+    let tasksList;
+    if(localStorage.getItem('tasks_mgmt') == null){
+        tasksList = [];
+    } else {
+        tasksList = JSON.parse(localStorage.getItem('tasks_mgmt'));
+    }
+    tasksList.push(letNewTask);
+    localStorage.setItem('tasks_mgmt', JSON.stringify(tasksList));
+    taskName.value = '';
+    dueDate.value = '';
+    Priority.value = '';
+    renderListData();
+});
+function renderListData(){
+    const tasks = JSON.parse(localStorage.getItem('tasks_mgmt'));
+    let taskList = '';
+    const taskUlEl = document.querySelector('#taskList');
+    taskUlEl.innerHTML = '';
+    tasks.forEach(function(task, index){
+        taskUlEl.innerHTML += '<li data-key="'+ index +'"><h2>'+task.taskName+'</h2> <p><strong>Date: </strong>'+ task.dueDate +'</p> <p>'+ task.Priority +'</p> <a class="removeTask" href="#" data-key="'+ index +'">Remove</a> </li>';
+    });
+}
+    </script>
+</body>
+</html>
