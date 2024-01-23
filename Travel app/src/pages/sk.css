@@ -1,0 +1,141 @@
+.pop { padding-block: var(--section-padding); }
+
+.pop-list,
+.pop-list > li:not(:last-child) { margin-bottom: 30px; }
+
+.pop-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-25);
+  height: 430px;
+  margin-top: 20px;
+}
+
+.pop-card:hover{
+  transition: .2s;
+  transform: scale(1.1);
+}
+
+.pop-card .card-img { height: 100%; }
+
+.pop-card .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pop-card .card-cont {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: var(--white);
+  border-radius: var(--radius-25);
+  padding: 20px;
+}
+
+
+.pop-card .card-rat{
+  background-color: rgb(11, 182, 125);
+  color: var(--white);
+  position: absolute;
+  top: 0;
+  right: 25px;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.popr-card .card-sub {
+  margin-top: 15px;
+  color: var(--blue-ncs);
+  font-size: var(--fs-6);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.pop-card .card-tit { margin-top: 5px; margin-bottom: 3px;}
+
+.pop-card :is(.card-sub, .card-tit) > a { color: inherit; }
+
+.pop .btn { margin-inline: auto; }
+
+.pop-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.popr-list > li:not(:last-child) { margin-bottom: 0; }
+
+.pop-card .card-cont { right: 20px; }
+
+.pop-list { grid-template-columns: repeat(3, 1fr); }
+
+
+.mah-header {
+  background-image: url("./images/maldivs.jpg");
+  background-size: cover;
+  padding: 40px;
+  text-align: center;
+  margin: 0;
+  font-size: 80px;
+  font-style: italic;
+  color:whitesmoke;
+  margin-bottom: 10px;
+}
+
+.mah-pill-nav a{
+  margin-left: 50px;
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 5px;
+  margin-bottom: 7px;
+}
+
+.mah-pill-nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.mah-pill-nav a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.mah-cho{
+  margin: 7px;
+  font-size: 40px;
+  margin-top: 12px;
+  margin-left: 550px;
+  font-family:'Times New Roman', Times, serif;
+  color: rgb(54, 163, 54);
+}
+
+.mah-line2{
+  border: 1px solid rgb(54, 163, 54);
+  border-radius: 5px;
+  margin-bottom: 4px;
+  margin-left: 270px;
+}
+
+.det{
+  margin-top:10px;
+  margin-left: 200px;
+  margin-bottom: -10px;
+  border-radius: 20px;
+  background-color: cornflowerblue;
+}
+
+.card-text{
+  margin-bottom: 6px;
+}
