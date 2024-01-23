@@ -1,0 +1,58 @@
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+  .navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+
+
+.navbar-list {
+  margin-left: -30px;
+  list-style: none;
+  display: flex;
+}
+
+
+.navbar-item a {
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-item a:hover {
+  color: #2ab431; 
+}
+
+.sea-but{
+  margin-right: -35px;
+  border-radius: 24px;
+  width: 100px;
+}

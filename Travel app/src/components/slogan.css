@@ -1,0 +1,21 @@
+.cta {
+    margin-top: 40px;
+    background: var(--bright-navy-blue);
+    padding-block: var(--section-padding);
+  }
+  
+  .cta :is(.section-subtitle, .section-title, .section-text) { color: var(--white); }
+  
+  .cta .section-text { font-size: var(--fs-5); }
+  
+  .cta .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cta-content { width: calc(100% - 225px); }
+  
+  .cta .section-text { margin-inline: 0; }
+  
+  .cta .section-title { max-width: 25ch; } 
