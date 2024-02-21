@@ -1,0 +1,31 @@
+.details-value{
+  display: flex;
+  margin-top: 1500px;
+  margin-left: 20px;
+  font-size: 32px;
+}
+
+.details-card {
+  width: 100%; /* Adjust as needed */
+  max-width: 850px; /* Maximum width */
+  min-height: 100px; /* Minimum height */
+  margin-top: -200px;
+  margin-left: 40px;
+  padding: 20px; /* Add padding for content */
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.details-card .details-text{
+  margin: 24px 30px;
+  font-size: 24px;
+}
+
+.details-head{
+  margin: 20px 4px 20px;
+  font-size: 30px;
+  background-color: rgb(156, 154, 154);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
