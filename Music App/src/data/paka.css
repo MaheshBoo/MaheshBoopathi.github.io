@@ -1,0 +1,45 @@
+/* Example CardSlider.css */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .paka {
+    width: 300px; /* Adjust width as needed */
+    height: auto;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 20px; /* Adjust spacing between cards */
+  }
+  
+  .paka .paka-content {
+    padding: 20px;
+  }
+  
+  .paka .paka-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .paka .paka-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .paka .paka-content .button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .paka .paka-content .button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,365 @@
+body {
+  background: rgb(6,2,65);
+  background: linear-gradient(90deg, rgba(6,2,65,1) 0%, rgba(5,5,134,1) 50%, rgba(0,212,255,1) 100%);
+  margin: 0; 
+}
+
+.sidebar {
+  background-color: #0d0d0d;
+  color: #ffffff;
+  width: 250px;
+  height: 100vh;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-icon {
+  font-size: 56px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.menu, .library, .account {
+  margin-bottom: 20px;
+}
+
+.menu h3, .library h3, .account h3 {
+  font-size: 12px;
+  color: #aaaaaa;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.menu-item .icon {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.menu-item span {
+  font-size: 14px;
+}
+
+.menu-item:hover {
+  color: #1db954; 
+}
+
+
+/*============card===============*/
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  padding: 10px;
+  margin-left: 20%;
+  margin-top: 20%; 
+  box-sizing: border-box;
+}
+
+.custom-card {
+  width: 100%;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease; 
+}
+
+.custom-card:hover .card-image {
+  transform: scale(1.5);
+}
+
+.card-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: bottom 0.3s ease;
+}
+
+.custom-card:hover .card-text {
+  bottom: -30px; 
+}
+
+
+/*===========corasal============*/
+
+.carousel-container {
+  height: 50px;
+  margin-left: 19%;
+  margin-top: 0%
+}
+
+.carousel .slide img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.carousel .legend {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+/*===================Audio Player==================*/
+
+.audio-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px;
+  background-color: rgb(86, 86, 90);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; 
+}
+
+.audio-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.album-art {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+  padding-right: 30px;
+  margin-left: -20px;
+}
+
+.album-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.album-placeholder {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.track-info {
+  flex: 1;
+  color: white;
+  padding-right: 20px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fefbfb;
+  margin: 0 10px;
+}
+
+.timeline {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.timeline input[type="range"] {
+  width: 500px;
+}
+
+.time {
+  font-size: 14px;
+  gap: 10px;
+  display: flex;
+  color: white;
+}
+
+/* FontAwesome Icons (if using FontAwesome) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+
+/*========================pop carasoule=================*/
+
+.pop-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust height as needed */
+  overflow: hidden;
+}
+
+.slideshow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.slide {
+  width: calc((100% - 20%) / 6); /* Calculate width for 6 slides */
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+  margin-left: 0;
+  margin-right: 30px;
+}
+
+.slide.active {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.slide:first-child {
+  margin-left: 20%; /* Add margin-left for the first slide */
+}
+
+/* Add animation for slide transition */
+.slideshow {
+  transition: transform 0.5s ease;
+}
+
+.slideshow.animate {
+  transform: translateX(-100%);
+}
+
+/*================new slider==================*/
+
+
+.play-container {
+  position: relative;
+  margin-left: 20%; /* Adjust margin as needed */
+  margin-top: 20%;
+  overflow: hidden;
+}
+
+.play-carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.play-card {
+  width: calc(100% / 6);
+  flex: 0 0 calc(100% / 6);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.play-card.hidden {
+  transform: translateX(-100%);
+}
+
+.play-card.visible {
+  transform: translateX(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.play-card-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.play-card:hover .play-card-content {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.play-card-image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.play-card:hover .play-card-image {
+  transform: scale(1.1);
+}
+
+.play-card-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: bottom 0.3s ease;
+}
+
+.play-card:hover .play-card-text {
+  bottom: -30px;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-control:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
