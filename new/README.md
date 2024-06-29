@@ -1,3 +1,10 @@
+Project Outlook:
+
+![Screenshot 2024-06-29 094438](https://github.com/MaheshBoo/MaheshBoopathi.github.io/assets/136978753/fa8f517c-c09a-49a7-aec5-834a93f0a9b1)
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
